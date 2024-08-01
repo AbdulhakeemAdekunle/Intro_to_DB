@@ -1,6 +1,4 @@
 import mysql.connector
-
-from mysql.connector import Error
 from getpass import getpass
 
 try: 
@@ -13,7 +11,7 @@ try:
     mycursor = mydatabase.cursor()
     mycursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
     print("Database created successfully")
-except Error as e:
+except mysql.connection.Error as e:
     print(e)
 
 mycursor.close()
